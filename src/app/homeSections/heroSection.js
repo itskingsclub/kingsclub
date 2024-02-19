@@ -8,7 +8,7 @@ const HeroSection = () => {
                 <Header />
                 <div className="container">
                     <div className="row gy-3 gy-md-5">
-                        <div className="col-md-6 d-flex align-items-center justify-content-center justify-content-start">
+                        <div className="col-md-6 d-flex align-items-center justify-content-start justify-content-md-center justify-content-start">
                             <div className="hero-content">
                                 <div className="hero-top">
                                     <div className="icon">

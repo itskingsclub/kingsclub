@@ -32,7 +32,7 @@ const Header = () => {
         <nav className="navbar">
           <div className="container position-relative">
             <Link href="/" className="navbar-brnad d-md-none" data-aos="fade-right">
-              <img src="assets/images/logo.png" style={{ maxWidth: "98px" }} className="img-fluid header-logo" alt="Hrms" />
+              <img src="assets/images/logo.png" className="img-fluid header-logo" alt="Hrms" />
             </Link>
             <div className={`header-menu w-100 ${show === true ? "active" : ""} `}>
               <ul className="navbar-nav mx-auto ml-auto flex-row justify-content-around align-items-center">
@@ -47,7 +47,7 @@ const Header = () => {
                 </li>
                 <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="600">
                   <Link href="/" className="navbar-brnad" data-aos="fade-right">
-                    <img src="assets/images/logo.png" style={{ maxWidth: "98px" }} className="img-fluid" alt="Hrms" />
+                    <img src="assets/images/logo.png" className="img-fluid header-logo" alt="Hrms" />
                   </Link>
                 </li>
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="750">
@@ -57,7 +57,7 @@ const Header = () => {
                   <Link href="#faq" className={`header header-transprent ${pathname.startsWith('/contact') ? 'active' : ''}`}>Faqs</Link>
                 </li>
                 <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="900">
-                  <button className="main-btn yellow-btn">Download App</button>
+                  <Link href="kingsclub.apk"> <button className="main-btn yellow-btn">Download App</button></Link>
                 </li>
               </ul>
             </div>
