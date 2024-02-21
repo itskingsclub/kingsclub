@@ -62,7 +62,7 @@ const Header = () => {
               </ul>
             </div>
             <div className='d-md-none d-flex'>
-              <button className="main-btn yellow-btn">Download App</button>
+              <Link href="kingsclub.apk"><button className="main-btn yellow-btn">Download App</button></Link>
               <button className="togglebtn main-btn yellow-btn " onClick={() => toggleclick()} >
                 {show === true ? (<i className="fa-solid fa-xmark"></i>) : (<i className="fa fa-bars" aria-hidden="true"></i>)}
               </button>

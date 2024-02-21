@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../CommenSection/Header";
+import Link from "next/link";
 
 const HeroSection = () => {
     return (
@@ -8,7 +9,7 @@ const HeroSection = () => {
                 <Header />
                 <div className="container">
                     <div className="row gy-3 gy-md-5">
-                        <div className="col-md-6 d-flex align-items-center justify-content-start justify-content-md-center justify-content-start">
+                        <div className="col-lg-6 col-md-7 d-flex align-items-center justify-content-start justify-content-md-center justify-content-start">
                             <div className="hero-content">
                                 <div className="hero-top">
                                     <div className="icon">
@@ -32,18 +33,18 @@ const HeroSection = () => {
                                     <pre>
                                         <h1 className="text-right">
                                             Play More <br />
-                                            &nbsp; &nbsp; &nbsp; & <br />
+                                            &nbsp; &nbsp; &nbsp; <span>&</span>  <br />
                                             Earn  More
                                         </h1>
                                     </pre>
                                 </div>
-                                <button className="main-btn yellow-btn download-button">
+                                <Link href="kingsclub.apk"> <button className="main-btn yellow-btn download-button">
                                     <img src="assets/images/anroid-icon.gif" alt="anroid-icon" />{" "}
                                     Download App
-                                </button>
+                                </button></Link>
                             </div>
                         </div>
-                        <div className="col-md-6 d-flex align-items-center justify-content-center justify-content-start">
+                        <div className="col-lg-6 col-md-5 d-flex align-items-center justify-content-center justify-content-start">
                             <div className="image-banner">
                                 <img
                                     src="assets/images/hero-img.png"
