@@ -146,14 +146,25 @@ h6 {
   margin: auto;
 }
 
+.content_heading {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.content_sab_heading {
+  margin-bottom: 8px;
+  letter-spacing: 5px;
+}
+
 /* Header css  */
 .hero-section {
   background: url(/assets/images/hero-bg.png) no-repeat;
   padding: 0px 0 200px 0;
 }
 
-.header {
-  margin-bottom: 50px;
+.hero_top {
+  margin-top: 50px;
 }
 
 .header a {
@@ -608,8 +619,8 @@ h6 {
     line-height: 60px;
   }
 
-  .header {
-    margin-bottom: 10px;
+  .hero_top {
+    margin-top: 10px;
   }
 
   .feature-box {
