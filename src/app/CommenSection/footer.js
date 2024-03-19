@@ -45,7 +45,7 @@ const Footer = () => {
                                 <h6>Information :</h6>
                                 <ul>
                                     <li>
-                                        <Link href="#">Privacy Policy</Link>
+                                        <Link href="/Privacy">Privacy Policy</Link>
                                     </li>
                                     <li>
                                         <Link href="#">Terms and Condition</Link>
