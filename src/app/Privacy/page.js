@@ -130,11 +130,11 @@ export default function Page() {
                         <p >Kings Club Privacy Policy: Safeguarding Your Data, Ensuring Transparency, and Fostering a Secure Gaming Environment for Our Valued Users</p>
                     </div>
                     <div className="content_container mt-5">
-                        {sections && sections.sections.map((section) => (
-                            <div >
+                        {sections && sections.sections.map((section, i) => (
+                            <div key={i}>
                                 <div className="content_heading"><h4>{section.heading}</h4></div>
-                                {section.subsections.map((subsections) => (
-                                    <div className="content_detail">
+                                {section.subsections.map((subsections, i) => (
+                                    <div className="content_detail" key={i}>
                                         <div className="content_sab_heading"><h6>{subsections.heading}</h6></div>
                                         <p>{subsections.content}</p>
                                     </div>
