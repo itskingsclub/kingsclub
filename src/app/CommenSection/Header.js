@@ -1,16 +1,24 @@
 "use client"
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { usePathname } from 'next/navigation'
+import { AuthContext } from '../auth-provider';
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const { userData, setUserData } = useContext(AuthContext);
   const pathname = usePathname();
-
 
   const toggleclick = () => {
     setShow(!show);
   };
+  console.log("userdata id", userData)
+
+  if (userData) {
+    console.log("userdata id", userData)
+  } else {
+    console.log("userdata id", userData)
+  }
 
 
   const handleDocumentClick = event => {
@@ -25,6 +33,10 @@ const Header = () => {
       document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
+  const logout = () => {
+    localStorage.clear();
+    window.location.reload();
+  }
 
   return (
     <>
@@ -45,17 +57,18 @@ const Header = () => {
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="600">
                   <Link href="#aboutus" className={`header header-transprent ${pathname.startsWith('/aboutus') ? 'active' : ''}`}>ABOUT US</Link>
                 </li>
-                {/* <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="600">
-                  <Link href="/" className="navbar-brnad" data-aos="fade-right">
-                    <img src="assets/images/logo.png" className="img-fluid header-logo" alt="Hrms" />
-                  </Link>
-                </li> */}
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="750">
                   <Link href="#footer" className={`header header-transprent ${pathname.startsWith('/contactus') ? 'active' : ''}`}>Contact Us</Link>
                 </li>
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
                   <Link href="#faq" className={`header header-transprent ${pathname.startsWith('/contact') ? 'active' : ''}`}>Faqs</Link>
                 </li>
+                {userData == null ? <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
+                  <Link href="/register" className="main-btn yellow-btn">register</Link>
+                </li> :
+                  <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
+                    <button onClick={() => logout()} className="main-btn yellow-btn">Log Out</button>
+                  </li>}
                 <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="900">
                   <Link href="kingsclub.apk"> <button className="main-btn yellow-btn">Download App</button></Link>
                 </li>

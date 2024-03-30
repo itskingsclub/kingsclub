@@ -23,9 +23,9 @@ const HeroSection = () => {
                                 <div>
                                     <pre>
                                         <h1 className="text-right">
-                                            Play More <br />
-                                            &nbsp; &nbsp; &nbsp; <span>&</span>  <br />
-                                            Earn  More
+                                            For Play Game<br />
+                                            {/* &nbsp; &nbsp; &nbsp; <span>&</span>  <br /> */}
+                                            Download App <br /> Now &#128071;
                                         </h1>
                                     </pre>
                                 </div>

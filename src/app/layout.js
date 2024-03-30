@@ -1,5 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css'
+import { ToastContainer } from 'react-toastify';
+import Header from './CommenSection/Header';
+import Footer from './CommenSection/footer';
+import 'react-toastify/dist/ReactToastify.css';
+import ThemeProvider from './auth-provider';
 
 export const metadata = {
   title: 'Kings Club',
@@ -14,7 +19,23 @@ export default function RootLayout({ children }) {
         <script src="https://kit.fontawesome.com/ffd603c3cc.js" crossOrigin="anonymous" async ></script>
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          <ToastContainer
+            position="bottom-left"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
