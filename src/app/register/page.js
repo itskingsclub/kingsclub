@@ -10,7 +10,8 @@ import { useRouter } from 'next/navigation'
 const Page = () => {
     const searchParams = useSearchParams();
     const { push } = useRouter();
-    const referalcode = searchParams.get('referralcode')
+    const referalcode = searchParams.get('referalcode')
+    console.log("referalcode", referalcode, searchParams)
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState({
         fullName: { value: "", error: "" },
