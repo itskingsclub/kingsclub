@@ -12,7 +12,10 @@ export default function ThemeProvider({ children }) {
   const [userData, setUserData] = useState(null);
   const value = { userData, setUserData };
   useEffect(() => {
-    const storedUserDetails = localStorage.getItem('userDetails');
+    let storedUserDetails
+    if (typeof window !== 'undefined' && window.localStorage) {
+      storedUserDetails = localStorage.getItem('userDetails');
+    }
     const userDetails = storedUserDetails ? JSON.parse(storedUserDetails) : null;
     setUserData(userDetails)
   }, [])

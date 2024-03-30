@@ -6,9 +6,14 @@ import Footer from "../CommenSection/footer";
 import { verifyotpApi } from "../service/apicalls";
 import { useRouter } from "next/navigation";
 
-const Page = ({ length = 4, onOtpSubmit = () => {} }) => {
+const Page = () => {
   const { push } = useRouter();
-  const mobileNumber = localStorage.getItem("mobileNumber");
+  const length = 4;
+  const onOtpSubmit = () => {};
+  let mobileNumber;
+  if (typeof window !== "undefined" && window.localStorage) {
+    mobileNumber = localStorage.getItem("mobileNumber");
+  }
   const [otp, setOtp] = useState(new Array(length).fill(""));
   const inputRefs = useRef([]);
   const [loading, setLoading] = useState(false);
@@ -117,7 +122,7 @@ const Page = ({ length = 4, onOtpSubmit = () => {} }) => {
                       {otp.map((value, index) => {
                         return (
                           <>
-                            <div className="otp-input">
+                            <div className="otp-input" key={index}>
                               <input
                                 key={index}
                                 type="text"
