@@ -57,11 +57,6 @@ const Header = () => {
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="600">
                   <Link href="#aboutus" className={`header header-transprent ${pathname.startsWith('/aboutus') ? 'active' : ''}`}>ABOUT US</Link>
                 </li>
-                {/* <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="600">
-                  <Link href="/" className="navbar-brnad" data-aos="fade-right">
-                    <img src="assets/images/logo.png" className="img-fluid header-logo" alt="Hrms" />
-                  </Link>
-                </li> */}
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="750">
                   <Link href="#footer" className={`header header-transprent ${pathname.startsWith('/contactus') ? 'active' : ''}`}>Contact Us</Link>
                 </li>
