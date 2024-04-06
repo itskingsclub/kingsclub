@@ -7,13 +7,13 @@ import Testimonial from "../homeSections/testimonial";
 
 export default function Page() {
   return (
-  <>
-  <HeroSection />
-  <Aboutus />
-  <FeaturesSection />
-  <Testimonial />
-  <Faq />
-  <Stories />
-  </>
+    <>
+      <HeroSection />
+      <Aboutus />
+      <FeaturesSection />
+      <Testimonial />
+      <Faq />
+      {/* <Stories /> */}
+    </>
   )
 }

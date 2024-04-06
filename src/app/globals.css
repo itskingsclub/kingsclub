@@ -246,7 +246,7 @@ h6 {
 }
 
 .header-logo {
-  max-width: 98px;
+  max-width: 87px;
 }
 
 .hero-top .icon {
@@ -603,6 +603,7 @@ h6 {
   border-top: 1px solid rgba(255, 255, 255, 0.315);
   padding: 25px 0;
   text-align: center;
+  margin-top: 40px;
 }
 
 /* respnsive css start */

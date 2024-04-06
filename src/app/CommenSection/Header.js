@@ -63,12 +63,12 @@ const Header = () => {
                 <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
                   <Link href="#faq" className={`header header-transprent ${pathname.startsWith('/contact') ? 'active' : ''}`}>Faqs</Link>
                 </li>
-                {userData == null ? <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
+                {/* {userData == null ? <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
                   <Link href="/register" className="main-btn yellow-btn">register</Link>
                 </li> :
                   <li className="nav-item" data-aos="fade-down-right" data-aos-delay="900">
                     <button onClick={() => logout()} className="main-btn yellow-btn">Log Out</button>
-                  </li>}
+                  </li>} */}
                 <li className="nav-item d-none d-md-block" data-aos="fade-down-right" data-aos-delay="900">
                   <Link href="kingsclub.apk"> <button className="main-btn yellow-btn">Download App</button></Link>
                 </li>

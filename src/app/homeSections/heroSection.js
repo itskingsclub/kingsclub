@@ -9,7 +9,7 @@ const HeroSection = () => {
                 <Header />
                 <div className="container hero_top">
                     <div className="row gy-3 gy-md-5">
-                        <div className="col-lg-6 col-md-7 d-flex align-items-center justify-content-start justify-content-md-center justify-content-start">
+                        <div className="col-lg-6 col-md-7 d-flex align-items-center justify-content-start justify-content-start">
                             <div className="hero-content">
                                 <div className="hero-top">
                                     <div className="icon">
@@ -25,7 +25,7 @@ const HeroSection = () => {
                                         <h1 className="text-right">
                                             For Play Game<br />
                                             {/* &nbsp; &nbsp; &nbsp; <span>&</span>  <br /> */}
-                                            Download App <br /> Now &#128071;
+                                            Download App <br />Now &#128071;
                                         </h1>
                                     </pre>
                                 </div>
