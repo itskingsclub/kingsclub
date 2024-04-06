@@ -11,7 +11,7 @@ const Footer = () => {
                             <div className="footer-logo d-flex justify-content-center justify-content-md-start">
                                 <img src="assets/images/logo.png" className='img-fluid' alt="logo" />
                             </div>
-                            <div className="footer-images d-flex mt-2 mt-md-4 justify-content-center justify-content-md-start">
+                            {/* <div className="footer-images d-flex mt-2 mt-md-4 justify-content-center justify-content-md-start">
                                 <div className='text-center me-4'>
                                     <img src="assets/images/nobot.png" className='img-fluid mb-2 no-bot' alt="nobot" />
                                     <h6 className="">No Bot</h6>
@@ -19,7 +19,7 @@ const Footer = () => {
                                 <div className='text-center'>
                                     <img src="assets/images/upi-icon.png" className='img-fluid mb-2' alt="upi-icon" />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-md-3 col-sm-4 col-6">
                             <div className="footer-links">
@@ -29,13 +29,13 @@ const Footer = () => {
                                         <Link href="#">Home</Link>
                                     </li>
                                     <li>
-                                        <Link href="#">Features</Link>
+                                        <Link href="#features">Features</Link>
                                     </li>
                                     <li>
-                                        <Link href="#">FAQs</Link>
+                                        <Link href="#faq">FAQs</Link>
                                     </li>
                                     <li>
-                                        <Link href="#">About us</Link>
+                                        <Link href="#aboutus">About us</Link>
                                     </li>
                                 </ul>
                             </div>
