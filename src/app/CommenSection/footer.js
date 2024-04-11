@@ -48,10 +48,10 @@ const Footer = () => {
                                         <Link href="/Privacy">Privacy Policy</Link>
                                     </li>
                                     <li>
-                                        <Link href="#">Terms and Condition</Link>
+                                        <Link href="/terms">Terms and Condition</Link>
                                     </li>
                                     <li>
-                                        <Link href="#">Gambling Policy</Link>
+                                        <Link href="/gambling">Gambling Policy</Link>
                                     </li>
                                     <li>
                                         <Link href="#">Refund Policy</Link>
