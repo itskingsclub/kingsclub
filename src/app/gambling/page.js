@@ -1,64 +1,98 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Header from "../CommenSection/Header";
 import Footer from "../CommenSection/footer";
+import { getCancationContent } from "../service/apicalls";
 
 export default function Page() {
-    const policyData = {
-        "terms_and_conditions": {
-            "title": "Terms and Conditions",
-            "sections": [
-                {
-                    "title": "Player's Age Requirement",
-                    "content": "Players must be 18 years of age or older to participate. Players from the following states are not permitted to play: Assam, Telangana, Odisha, Nagaland, Andhra Pradesh, Tamil Nadu. This requirement ensures compliance with legal regulations and promotes responsible gaming practices."
-                },
-                {
-                    "title": "Definitions",
-                    "content": "In these terms, the terms 'We,' 'Us,' 'Our,' 'Company' individually and collectively refer to UNIBIT App by Unibit. On the other hand, the terms 'Visitor' and 'User' refer specifically to individuals using our website and mobile application."
-                },
-                {
-                    "title": "Acceptance of Terms",
-                    "content": "By accessing this website (Unibit.in) or using the UNIBIT app, you explicitly agree to abide by these Terms and Conditions. Should you disagree with any part of these terms, we kindly request that you exit the site and app immediately."
-                },
-                {
-                    "title": "Updates to Terms",
-                    "content": "We retain the right to revise, amend, or modify these Terms and Conditions at any given time. It is your responsibility as a user to review these terms periodically for any updates or changes."
-                },
-                {
-                    "title": "Financial Risk and Responsibility",
-                    "content": "Participants should be aware that our gaming platform involves a certain level of financial risk. Play responsibly at your own risk. Additionally, participants must be 18 years or older to participate. This requirement ensures compliance with legal regulations and promotes responsible gaming practices."
-                },
-                {
-                    "title": "Use of Content",
-                    "content": "All content on this site, including logos, brands, and marks, is the property of UNIBIT or used under license. Unauthorized use is prohibited."
-                },
-                {
-                    "title": "Acceptable Use",
-                    "content": "Visitors must not violate the security of the website or app, infringe intellectual property rights, or engage in unlawful activities. Any such actions may result in account termination or legal action."
-                },
-                {
-                    "title": "Indemnity",
-                    "content": "Users agree to indemnify and hold harmless the Company and its affiliates from any claims or liabilities arising from their use of the website or app. This includes legal fees and damages."
-                },
-                {
-                    "title": "Fraud Detection",
-                    "content": "The Company reserves the right to block accounts and forfeit funds in case of detected fraud. This measure helps maintain the integrity and fairness of our gaming platform."
-                },
-                {
-                    "title": "Limitation of Liability",
-                    "content": "The Company and its affiliates shall not be liable for any damages, losses, or liabilities arising from the use of the service. This includes but is not limited to financial losses, data loss, or any indirect or consequential damages."
-                },
-                {
-                    "title": "Disclaimer of Consequential Damages",
-                    "content": "The Company shall not be liable for any consequential damages resulting from the use of the website or app. This includes but is not limited to lost profits, business interruption, or loss of data."
-                },
-                {
-                    "title": "Refund & Cancellation Policy",
-                    "content": "Our refund policy allows for refunds in certain circumstances. Please review the cancellation and refund policy for details. Requests for cancellations must be made at least 7 business days prior to the end of the current service period."
-                }
+    const [cancelData, setCancelData] = useState({})
+    const cancelationData = {
+        "cancellationPolicy": {
+            "title": "Cancellation Policy",
+            "content": [
+                "For cancellations, please contact us via WhatsApp or email: help.kingsclub@gmail.com",
+                "Requests received later than 2 business days before the scheduled match will be considered cancellations for the next match."
+            ]
+        },
+        "themePlayerRefunds": {
+            "title": "Theme Player or Fresh ID Player Refunds",
+            "content": [
+                "If you join a match as a Theme player or play with a Theme/Fresh ID player, our refund policy applies as follows:",
+                "Cancellation within 10% of Gameplay: If you cancel the game after playing less than 10% of the total duration, you will receive a 50% refund (entry fee).",
+                "Cancellation after 10% of Gameplay: If you cancel after playing more than 10% of the duration, the losing player will forfeit the entry fee, and the winning player will receive only 50% of the total win amount."
+            ]
+        },
+        "fairPlaySportsmanship": {
+            "title": "Fair Play and Sportsmanship",
+            "content": [
+                "Foul Language and Slang: Using any kind of foul language or slang towards your opponent without a valid reason will result in game cancellation and a potential fine (no refunds in such cases).",
+                "Slow Play: Playing excessively slow without justification will lead to a game loss. If you have a valid reason for slow play (requires verification), the game may be canceled after 30 minutes from the start."
+            ]
+        },
+        "inappropriateContent": {
+            "title": "Inappropriate Content",
+            "content": [
+                "Uploading a profile picture with nudity is strictly prohibited. Doing so will result in a permanent account suspension."
+            ]
+        },
+        "tournamentTimeLimits": {
+            "title": "Tournament Time Limits",
+            "content": [
+                "In tournament matches, exceeding the 15-minute time limit may lead to match cancellation without a refund."
             ]
         }
     }
+    const refundData = {
+        "RefundPolicy": {
+            "title": "Refund Policy",
+            "content": [
+                "KingsClub strives for customer satisfaction. We may offer refunds on a case-by-case basis for genuine reasons verified through investigation. Here's an overview of our refund policy."
+            ]
+        },
+        "GeneralPolicy": {
+            "title": "General Policy",
+            "content": [
+                "Refunds are not guaranteed and will be evaluated based on the specific situation."
+            ]
+        },
+        "ScenariosforRefunds:": {
+            "title": "Scenarios for Refunds:",
+            "content": [
+                "Cancellation within Allowed Window (see Cancellation Policy): Refer to the Cancellation Policy section for details on eligible cancellation windows and partial refunds based on gameplay progress (Theme/Fresh ID players).",
+                "Technical Issues: If technical issues prevent you from playing the game.",
+                "Rule Violations by Opponent (with Proof): If your opponent violates game rules and you can provide valid proof."
 
+            ]
+        },
+        "Non-RefundableSituations": {
+            "title": "Non-Refundable Situations",
+            "content": [
+                "Delays in uploading results during zero commission hours (if applicable), using foul language, playing excessively slow without justification, uploading inappropriate profile pictures, or exceeding tournament time limits may lead to match cancellation and no refunds will be issued in these cases."
+            ]
+        },
+        "LateorMissingRefunds": {
+            "title": "Late or Missing Refunds",
+            "content": [
+                "If you haven't received a refund after a reasonable timeframe (usually determined by your bank's processing time), please check your bank statement first. If the issue persists, contact us at help.kingsclub@gmail.com for further assistance"
+            ]
+        },
+    }
 
+    const getContent = async (e) => {
+        await getCancationContent()
+            .then((res) => {
+                if (res.success) {
+                    console.log("res", res)
+                    setCancelData(res?.data)
+                } else {
+                    console.log("err", res)
+                }
+            })
+    }
+    useEffect(() => {
+        getContent()
+    }, [])
 
 
     return (
@@ -67,21 +101,54 @@ export default function Page() {
             <section className="feature-section position-relative" id='features'>
                 <div className="container">
                     <div className="section-heading text-center">
-                        <h2>Terms & Conditions</h2>
+                        <h2>Gambling Policy</h2>
                         <p >Comprehensive Terms and Conditions for Kingsclub App: Ensuring Legal Compliance, User Responsibilities, and Risk Management</p>
                     </div>
                     <div className="content_container mt-5">
-                        {policyData && Object.keys(policyData).map((section, i) => (
-                            <div key={i}>
-                                <div className="content_heading"><h4>{policyData[section]?.title}</h4></div>
-                                {policyData[section]?.sections && policyData[section].sections.map((subsections, j) => (
-                                    <div key={j} className="content_detail">
-                                        <div className="content_sab_heading"><h6>{subsections.title}</h6></div>
-                                        <p>{subsections.content}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
+                        {Object.keys(cancelData).map((sectionKey, i) => {
+                            const section = cancelData[sectionKey];
+                            return (
+                                <div key={i}>
+                                    <div className="content_heading"><h5>{section.title}</h5></div>
+                                    {section.content.map((subsections, j) => (
+                                        <div key={j} className="content_detail">
+                                            {Array.isArray(subsections) ? (
+                                                <ul>
+                                                    {subsections.map((item, k) => (
+                                                        <li key={k}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            ) : (
+                                                <p>{subsections}</p>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="content_container mt-5">
+                        {Object.keys(refundData).map((sectionKey, i) => {
+                            const section = refundData[sectionKey];
+                            return (
+                                <div key={i}>
+                                    <div className="content_heading"><h5>{section.title}</h5></div>
+                                    {section.content.map((subsections, j) => (
+                                        <div key={j} className="content_detail">
+                                            {Array.isArray(subsections) ? (
+                                                <ul>
+                                                    {subsections.map((item, k) => (
+                                                        <li key={k}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            ) : (
+                                                <p>{j + 1 + "." + " "} {subsections}</p>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

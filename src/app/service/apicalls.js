@@ -33,3 +33,15 @@ export async function verifyotpApi(payload) {
     return error?.response?.data;
   }
 }
+
+export async function getCancationContent() {
+  try {
+    const response = await APIKit.get(`/content/cancelation`);
+    return response.data;
+  } catch (error) {
+    console.log(error?.response?.data);
+    return error?.response?.data;
+  }
+}
+
+

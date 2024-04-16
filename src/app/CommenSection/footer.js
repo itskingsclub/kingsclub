@@ -53,9 +53,9 @@ const Footer = () => {
                                     <li>
                                         <Link href="/gambling">Gambling Policy</Link>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link href="#">Refund Policy</Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
