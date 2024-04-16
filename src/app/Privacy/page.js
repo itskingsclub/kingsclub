@@ -89,7 +89,7 @@ export default function Page() {
                 <div className="container">
                     <div className="section-heading text-center">
                         <h2>Privacy Policy</h2>
-                        <p >Kings Club Privacy Policy: Safeguarding Your Data, Ensuring Transparency, and Fostering a Secure Gaming Environment for Our Valued Users</p>
+                        <p >Kings Club Privacy Policy : Safeguarding Your Data, Ensuring Transparency, and Fostering a Secure Gaming Environment for Our Valued Users</p>
                     </div>
                     <div className="content_container mt-5">
                         {Object.keys(policyData).map((sectionKey, i) => {
