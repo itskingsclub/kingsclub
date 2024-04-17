@@ -44,4 +44,14 @@ export async function getCancationContent() {
   }
 }
 
+export async function getRefundDataContent() {
+  try {
+    const response = await APIKit.get(`/content/refund`);
+    return response.data;
+  } catch (error) {
+    console.log(error?.response?.data);
+    return error?.response?.data;
+  }
+}
+
 
