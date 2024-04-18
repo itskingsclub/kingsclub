@@ -6,7 +6,7 @@ const Footer = () => {
         <>
             <footer className="footer-section position-relative" id='footer'>
                 <div className="container">
-                    <div className="row">
+                    <div className="row gy-3">
                         <div className="col-md-3 col-sm-12">
                             <div className="footer-logo d-flex justify-content-center justify-content-md-start">
                                 <img src="assets/images/logo.png" className='img-fluid' alt="logo" />
