@@ -780,13 +780,6 @@ h6 {
     padding: 0 50px;
   }
 
-  .hero-section {
-    padding: 0px 0 65px 0;
-  }
-
-  .hero-content {
-    gap: 0px;
-  }
 
   .feature-section {
     padding: 0;
@@ -916,6 +909,30 @@ h6 {
 
   .footer-logo img {
     max-width: 100px;
+  }
+
+  .hero-section {
+    padding: 0px 0 20px 0;
+  }
+
+  .aboutus-section {
+    padding: 19px 0 40px;
+  }
+
+  .faq-section {
+    padding: 2px 0 20px 0;
+  }
+
+  .footer-section {
+    padding: 24px 0 0;
+  }
+
+  .hero-content {
+    gap: 0px;
+  }
+
+  .copyrights {
+    margin-top: 0px;
   }
 }
 
